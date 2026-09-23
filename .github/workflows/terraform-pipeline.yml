@@ -62,12 +62,12 @@ jobs:
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - name: Setup
-        uses: ./.github/actions/terraform-setup
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-setup@main
         with:
           terraform_version: ${{ inputs.terraformVersion }}
 
       - name: Init
-        uses: ./.github/actions/terraform-init
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-init@main
         with:
           working_directory: ${{ inputs.workingDirectory }}
           bucket: ${{ inputs.bucket }}
@@ -75,7 +75,7 @@ jobs:
           init_options: ${{ inputs.initOptions }}
 
       - name: Plan
-        uses: ./.github/actions/terraform-plan
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-plan@main
         with:
           working_directory: ${{ inputs.workingDirectory }}
           plan_options: ${{ inputs.planOptions }}
@@ -122,7 +122,7 @@ jobs:
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - name: Setup
-        uses: ./.github/actions/terraform-setup
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-setup@main
         with:
           terraform_version: ${{ inputs.terraformVersion }}
 
@@ -133,7 +133,7 @@ jobs:
           path: ${{ inputs.workingDirectory }}
 
       - name: Init
-        uses: ./.github/actions/terraform-init
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-init@main
         with:
           working_directory: ${{ inputs.workingDirectory }}
           bucket: ${{ inputs.bucket }}
@@ -141,6 +141,6 @@ jobs:
           init_options: ${{ inputs.initOptions }}
 
       - name: Apply
-        uses: ./.github/actions/terraform-apply
+        uses: varunsoam007/gcp-pipeline-template/.github/actions/terraform-apply@main
         with:
           working_directory: ${{ inputs.workingDirectory }}
